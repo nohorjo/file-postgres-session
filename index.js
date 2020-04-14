@@ -25,15 +25,15 @@ module.exports = function (session) {
             });`,
             ids,
         );
-        options.insertOrUpdateSession = (id, expires, data) => options.connection.query(
+        options.insertOrUpdateSessions = sessions => Promise.all(sessions.map(({id, expires, data}) => options.connection.query(
             `INSERT INTO ${options.table} (session_id, expires, data) VALUES ($1, $2, $3)
-            ON CONFLICT(session_id) DO UPDATE SET expires=$2, data=$3;`,
+             ON CONFLICT(session_id) DO UPDATE SET expires=$2, data=$3;`,
             [
                 id,
                 expires,
                 data,
             ],
-        );
+        )));
         options.setupBackup = options.createTable && (() => options.connection.query(
             `CREATE TABLE IF NOT EXISTS ${options.table} (
                 session_id VARCHAR(128) PRIMARY KEY NOT NULL,

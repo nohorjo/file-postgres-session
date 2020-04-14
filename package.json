@@ -1,6 +1,6 @@
 {
   "name": "file-postgres-session",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Express session store using the file system and backing up to a Postgres database",
   "main": "index.js",
   "scripts": {
