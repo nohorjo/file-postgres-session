@@ -4,10 +4,10 @@ Express session store using the file system and backing up to a Postgres databas
 # Usage
 ```javascript
 import * as session from 'express-session';
-const FilePostgresSession = require('file-postgres-session')(session);
+const filePostgresSession = require('file-postgres-session')(session);
 
 app.use(session({
-    store: new FilePostgresSession({
+    store: filePostgresSession({
         connection: pool, // Postgres connection pool
         dir: 'sessions', // dir path to keep session files
         createTable: true, // whether or not to create the table if it doesn not exist
