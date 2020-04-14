@@ -192,7 +192,7 @@ module.exports = function(session) {
                     const session = sessions[id];
                     delete session.ORIGINAL;
                     const expires = ((new Date(session.cookie.expires) / 1000) | 0).toString();
-                    this.options.query(
+                    this.options.connection.query(
                         `INSERT INTO ${this.options.table} (session_id, expires, data) VALUES ($1, $2, $3)
                         ON CONFLICT(session_id) DO UPDATE SET expires=$2, data=$3;`,
                         [
