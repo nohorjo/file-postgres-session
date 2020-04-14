@@ -181,13 +181,7 @@ module.exports = function(session) {
                         updates.removed.map((_, i) => `$${i + 1}`).join(',')
                     });`,
                     updates.removed,
-                    err => {
-                        if (err) {
-                            log.error(err);
-                            throw err;
-                        }
-                    }
-                );
+                ).catch(err => log.error(err));
             }
             this.all((err, sessions) => {
                 if (err) {
