@@ -1,0 +1,30 @@
+{
+  "name": "file-postgres-session",
+  "version": "1.0.0",
+  "description": "Express session store using the file system and backing up to a Postgres database",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nohorjo/file-postgres-session.git"
+  },
+  "keywords": [
+    "express",
+    "session",
+    "postgres",
+    "filestore"
+  ],
+  "author": "Muhammed Haque",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nohorjo/file-postgres-session/issues"
+  },
+  "homepage": "https://github.com/nohorjo/file-postgres-session#readme",
+  "dependencies": {
+    "debug": "3.1.0",
+    "deep-diff": "1.0.2",
+    "fs-extra": "7.0.0"
+  }
+}
